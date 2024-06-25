@@ -1,0 +1,110 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 20px;
+    background-color: #696969;
+    color: white;
+
+    p{
+        margin: 20px 0;
+    }
+
+    h4{
+        cursor: pointer;
+    }
+
+    &_block{
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+}
+
+.container{
+
+    &_block {
+        margin: 100px;
+        border: 2px solid grey;
+        border-radius: 20px;
+        max-height: 660px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    
+        &_text {
+            padding: 0 20px;
+            flex: 1; // Ensure it takes available space
+            display: flex;
+            flex-direction: column; // Adjusted to column
+            max-height: 500px; // Constraint height
+            overflow-y: auto; // Enable scrolling
+    
+            &_admin, &_user {
+                display: flex;
+                flex-direction: column;
+    
+                &_message { 
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                    max-width: 600px;
+                    background-color: #D4EFDF;
+                    padding: 10px 20px;
+                    border-radius: 10px;
+                    margin: 5px 0;
+
+                    P{
+                        color: #696969;
+                        font-size: 10px;
+                    }
+                }
+            }
+    
+            &_admin_message {
+                align-self: flex-start;
+            }
+            
+            &_user_message {
+                align-self: flex-end;
+            }
+        }
+    
+    
+
+        &_title{
+            padding: 10px 20px;
+            background-color: lightgrey;
+            border-bottom: 2px solid grey;
+            border-radius: 20px 20px 0 0;
+        }
+
+        &_input{
+            display: flex;
+            align-items: flex-end;
+            margin: 20px;
+            gap: 20px;
+
+            img{
+                cursor: pointer;
+                position: relative;
+            }
+
+            input{
+                width: 100%;
+                height: 30px;
+                color: grey;
+                padding: 10px;
+                border : 1px solid lightgrey;
+                border-radius: 10px;
+            }
+        }
+    }
+
+    &_img{
+        cursor: pointer;
+        position: fixed;
+        top: 850px;  
+        left: 1750px;
+    }
+}

@@ -1,0 +1,75 @@
+.auth{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5F5F5;
+    &_form{
+        margin: 120px;
+        padding: 30px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: grey;
+
+        &_change{
+            display: flex;
+            gap: 50px;
+            padding-bottom: 30px;
+
+            h2{
+                cursor: pointer;
+                font-weight: bold;
+            }
+
+            p{
+                cursor: pointer;
+                font-weight: bold;
+                font-size: 24px;
+                color: black;
+            }
+        }
+
+        p{
+            margin: 0 0 20px 0;
+        }
+
+        &_inputs{
+            position: relative;
+
+            input{
+                color: grey;
+                padding: 10px;
+                margin-bottom: 20px;
+                border : 1px solid lightgrey;
+                border-radius: 5px;
+            }
+
+            img{
+                position: absolute;
+                right: 10px;
+                top: 5px;
+                cursor: pointer;
+            }
+        }
+
+        &_button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            background-color: #1E90FF;
+            border : 1px solid white;
+            border-radius: 5px;
+            cursor: pointer;
+
+            p{
+                color: white;
+                margin : 10px 0;
+        }
+    }
+}
+}
