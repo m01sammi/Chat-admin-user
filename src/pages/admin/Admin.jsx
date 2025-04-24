@@ -34,7 +34,7 @@ export const Admin = () => {
 
     const fetchUsers = async () => {
         try {
-            const response = await fetch('https://6668977cf53957909ff897bc.mockapi.io/users');
+            const response = await fetch('https://2d872b439e2c3680.mokky.dev/messages');
             const data = await response.json();
             const unreadStatus = {};
             data.forEach(user => {
@@ -47,14 +47,18 @@ export const Admin = () => {
         }
     };
 
-    const checkUnreadMessages = (userMessages, adminMessages) => {
-        const lastAdminMessageTime = adminMessages.length > 0 ? new Date(adminMessages[adminMessages.length - 1].time) : new Date(0);
+    const checkUnreadMessages = (userMessages = [], adminMessages = []) => {
+        const lastAdminMessageTime = adminMessages.length > 0 
+            ? new Date(adminMessages[adminMessages.length - 1].time) 
+            : new Date(0);
+        
         return userMessages.some(message => new Date(message.time) > lastAdminMessageTime);
     };
+    
 
     const fetchMessages = async (user) => {
         try {
-            const response = await fetch(`https://6668977cf53957909ff897bc.mockapi.io/users/${user.id}`);
+            const response = await fetch(`https://2d872b439e2c3680.mokky.dev/messages/${user.id}`);
             const userData = await response.json();
             setMessagesList(userData.messages || []);
             setAdminMessages(userData.adminmessage || []);
@@ -92,8 +96,8 @@ export const Admin = () => {
                 adminmessage: updatedAdminMessages 
             };
 
-            const response = await fetch(`https://6668977cf53957909ff897bc.mockapi.io/users/${selectedUser.id}`, {
-                method: 'PUT',
+            const response = await fetch(`https://2d872b439e2c3680.mokky.dev/messages/${selectedUser.id}`, {
+                method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(updatedUser)
             });

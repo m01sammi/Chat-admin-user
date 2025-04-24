@@ -35,7 +35,7 @@ export const User = () => {
 
     const fetchMessages = async () => {
         try {
-            const response = await fetch(`https://6668977cf53957909ff897bc.mockapi.io/users?login=${login}`);
+            const response = await fetch(`https://2d872b439e2c3680.mokky.dev/messages?login=${login}`);
             const users = await response.json();
             if (users.length > 0) {
                 const user = users[0];
@@ -65,7 +65,7 @@ export const User = () => {
         const messageWithTimestamp = { text: message, time: timestamp };
 
         try {
-            const response = await fetch(`https://6668977cf53957909ff897bc.mockapi.io/users?login=${login}`, {
+            const response = await fetch(`https://2d872b439e2c3680.mokky.dev/messages?login=${login}`, {
                 method: 'GET'
             });
 
@@ -74,8 +74,8 @@ export const User = () => {
                 const user = users[0];
                 const updatedMessages = [...(user.messages || []), messageWithTimestamp];
 
-                const updateResponse = await fetch(`https://6668977cf53957909ff897bc.mockapi.io/users/${user.id}`, {
-                    method: 'PUT',
+                const updateResponse = await fetch(`https://2d872b439e2c3680.mokky.dev/messages/${user.id}`, {
+                    method: 'PATCH',
                     headers: {
                         'Content-Type': 'application/json'
                     },

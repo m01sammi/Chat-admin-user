@@ -35,7 +35,7 @@ const Authorization = () => {
 
     const handleLoginSubmit = async () => {
         try {
-            const usersResponse = await fetch('https://6668977cf53957909ff897bc.mockapi.io/users');
+            const usersResponse = await fetch('https://2d872b439e2c3680.mokky.dev/messages');
             const users = await usersResponse.json();
 
             const user = users.find(user => user.login === login && user.password === password);
@@ -59,7 +59,7 @@ const Authorization = () => {
         };
 
         try {
-            const usersResponse = await fetch('https://6668977cf53957909ff897bc.mockapi.io/users');
+            const usersResponse = await fetch('https://2d872b439e2c3680.mokky.dev/messages');
             const users = await usersResponse.json();
 
             const userExists = users.some(user => user.login === registrationLogin);
@@ -69,7 +69,7 @@ const Authorization = () => {
                 return;
             }
 
-            const response = await fetch('https://6668977cf53957909ff897bc.mockapi.io/users', {
+            const response = await fetch('https://2d872b439e2c3680.mokky.dev/messages', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
